@@ -37,6 +37,9 @@ dependencies:
   flutter_bloc: ^9.1.1
   equatable: ^2.0.7
   sensors_plus: ^6.1.1
+  pedometer: ^4.1.1
+  flutter_activity_recognition: ^4.0.0
+  permission_handler: ^12.0.1
 
 dev_dependencies:
   flutter_test:

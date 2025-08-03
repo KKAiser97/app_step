@@ -17,14 +17,14 @@ class _TodayPageState extends State<TodayPage> {
   void initState() {
     super.initState();
     _cubit = context.read<HomeCubit>();
-    _cubit.startCounting();
+    _cubit.initPlatformState();
   }
 
-  @override
-  void dispose() {
-    _cubit.stopCounting();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _cubit.stopCounting();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class _TodayPageState extends State<TodayPage> {
         padding: const EdgeInsets.all(16.0),
         child: BlocBuilder<HomeCubit, HomeState>(
           builder: (context, state) {
-            final progress = state.steps / state.goal;
+            final progress = state.goal > 0 ? state.steps / state.goal : 0.0;
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
